@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="gravity.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <button onclick="reset()">
+                Reset
+            </button>
+            <button onclick="start()">
+                Start
+            </button>
+            <button onclick="stop()">
+                Stop
+            </button><br><br>
+            <label for="N">Number of Tracer Particles:</label>
+            <input type="text" id="N" name="N" value="1000" onkeydown="handleNumTracers(event)">
+            <label for="dt">dt</label>
+            <input type="text" id="dt" name="dt" value="1" onkeydown="handleDT(event)">
+        </div>
+        <canvas id="html-canvas">
+    </body>
+</html>
