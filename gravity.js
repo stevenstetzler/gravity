@@ -162,7 +162,7 @@ function init() {
             ],
             r: 20,
             mass: 100,
-            colour: "#ff0000",
+            colour: "#ff9500",
         },
         {
             x: [
@@ -175,7 +175,7 @@ function init() {
             ],
             r: 20,
             mass: 100,
-            colour: "#0000ff",
+            colour: "#37ba07",
         },
     ];
 
