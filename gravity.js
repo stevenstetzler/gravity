@@ -4,7 +4,7 @@ function makeCanvas() {
     empty.width = empty.height = 1;
     canvas.style.cursor = 'url('+empty.toDataURL()+')';
     // Set actual size in memory (scaled to account for extra pixel density).
-    var scale = window.devicePixelRatio; // <--- Change to 1 on retina screens to see blurry canvas.
+    var scale = 1 //window.devicePixelRatio; // <--- Change to 1 on retina screens to see blurry canvas.
 
     var rect = canvas.getBoundingClientRect();
     canvas.width = window.innerWidth * scale;

@@ -1,22 +1,50 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="gravity.js"></script>
     </head>
-    <body>
-        <div id="controls">
-            <button onclick="reset()">
-                Reset
-            </button>
-            <button onclick="start()">
-                Start
-            </button>
-            <button onclick="stop()">
-                Stop
-            </button><br><br>
-            <label for="N">Number of Tracer Particles:</label>
-            <input type="text" id="N" name="N" value="1000" onkeydown="handleNumTracers(event)">
-            <label for="dt">dt</label>
-            <input type="text" id="dt" name="dt" value="1" onkeydown="handleDT(event)">
+    <style>
+        @media (max-width: 200px) {
+            body{font-size: 10px;}
+        }
+
+        @media (max-width: 300px) {
+            body{font-size: 24px;}
+        }
+    </style>
+    <body style="font-size: 2rem;">
+        <div id="controls" class="container-fluid">
+            <br>
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <button type="button" class="btn btn-secondary btn-block" onclick="reset()">
+                        Reset
+                    </button>        
+                </div>
+                <br>
+                <div class="col-md-12 col-lg-4">
+                    <button class="btn btn-secondary  btn-block" onclick="start()">
+                        Start
+                    </button>        
+                </div>
+                <br>
+                <div class="col-md-12 col-lg-4">
+                    <button class="btn btn-secondary  btn-block" onclick="stop()">
+                        Stop
+                    </button>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="container-fluid" for="N">Number of Particles:</label>
+                    <input class="container-fluid form-control-lg" type="text" id="N" name="N" value="1000" onkeydown="handleNumTracers(event)">    
+                </div>
+                <div class="col-md-6">
+                    <label class="container-fluid" for="dt">dt:</label>
+                    <input class="container-fluid form-control-lg" type="text" id="dt" name="dt" value="1" onkeydown="handleDT(event)">    
+                </div>
+            </div>
         </div>
         <canvas id="html-canvas">
     </body>
