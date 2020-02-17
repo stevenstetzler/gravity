@@ -141,9 +141,9 @@ function reset() {
 function start() {
     if (! GO) {
         GO = true;
-    }
-    if (step) {
-        step();
+        if (step) {
+            step();
+        }    
     }
 }
 
@@ -156,7 +156,7 @@ function stop() {
 function init() {
     var [canvas, context] = makeCanvas();
     parseInput();
-    var distance = 0.2 * canvas.width;
+    var distance = 0.3 * canvas.width;
 
     var objects = [
         {
