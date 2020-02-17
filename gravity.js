@@ -128,12 +128,20 @@ function handleDT(event) {
 
 function reset() {
     step = init();
-    step();
+    if (GO) {
+        stop();
+        setTimeout(start, 100);
+    } else {
+        stop();
+        setTimeout(step, 100);
+    }
 }
 
 // Start the simulation
 function start() {
-    GO = true;
+    if (! GO) {
+        GO = true;
+    }
     if (step) {
         step();
     }
@@ -288,7 +296,7 @@ function init() {
         );
     }
 
-    var step = function(t) {
+    var _step = function(t) {
         var start = window.performance.now();
         for (var i = 0; i < objects.length; i++) {
             leapFrog(dt, i, objects[i], a_compute);
@@ -310,10 +318,10 @@ function init() {
         context.fillText("Render: " + timeRender.toFixed(2) + " ms", 10, 60);
 
         if (GO) {
-            requestAnimationFrame(step);
+            requestAnimationFrame(_step);
         }
     }
-    return step;
+    return _step;
 }
 
 
@@ -323,8 +331,6 @@ var GO = false;
 var G = 1;
 var n_tracers;
 var dt;
-
-
 
 document.addEventListener(
     "DOMContentLoaded", function() {
