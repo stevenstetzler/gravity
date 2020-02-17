@@ -213,7 +213,7 @@ function init() {
     }
 
     var tracers = []
-    for (var i = 0; i < n_tracers; i++) {
+    for (var i = 0; i < parseInt(n_tracers / objects.length); i++) {
         for (var j = 0; j < objects.length; j++) {
             var galaxy = objects[j];
 
