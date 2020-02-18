@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/gpu.js@latest/dist/gpu-browser.min.js"></script>
+        <script src="gpu-gravity.js"></script>
+    </head>
+    <body>
+        <label id='size-label' for='size'>Number of Particles:</label>
+        <input id="size" value="1024" onkeydown="handleSize(event)"></input>
+        <p id="gpu-result"></p>
+        <p id="cpu-result"></p>
+        <p id="cpu-result-inplace"></p>
+    </body>
+</html>
